@@ -1,0 +1,139 @@
+.dash-page {
+    padding: 40px 0 80px;
+    min-height: 100vh;
+    background: transparent;
+}
+
+/* ─── Header ─────────────────────────────────────────────── */
+.dash-header { margin-bottom: 32px; }
+
+.dash-tricolor {
+    width: 64px; height: 2px;
+    background: linear-gradient(90deg, #FF9933 33.33%, rgba(255,255,255,0.6) 33.33% 66.66%, #138808 66.66%);
+    border-radius: 99px;
+    margin-bottom: 12px;
+}
+
+.dash-title {
+    font-size: 26px; font-weight: 800;
+    color: #fff; margin: 0 0 4px;
+    letter-spacing: -0.02em;
+}
+
+.dash-subtitle {
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+    margin: 0;
+}
+
+/* ─── Metrics ────────────────────────────────────────────── */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.metric-skeleton { height: 90px; border-radius: 16px; }
+
+/* ─── Quick Action Cards ─────────────────────────────────── */
+.dash-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.dash-action-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 22px;
+    background: rgba(6, 14, 35, 0.72);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(16px);
+    cursor: pointer;
+    text-align: left;
+    overflow: hidden;
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    font-family: var(--font-family);
+}
+
+.dash-action-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--card-border);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.40);
+}
+
+.dash-action-card:hover .dac-top-bar { opacity: 1; }
+.dash-action-card:hover .dac-hover-line { width: 100%; }
+.dash-action-card:hover .dac-arrow { color: var(--card-accent); transform: translateX(4px); }
+
+/* Colored top accent bar */
+.dac-top-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: var(--card-accent);
+    border-radius: 16px 16px 0 0;
+    opacity: 0.55;
+    transition: opacity 0.22s;
+}
+
+.dac-icon-wrap {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+
+.dac-icon { font-size: 1.2rem; }
+
+.dac-body {
+    display: flex; flex-direction: column; gap: 4px; flex: 1;
+}
+
+.dac-title {
+    font-size: 14px; font-weight: 700;
+    color: #fff; letter-spacing: -0.01em;
+}
+
+.dac-desc {
+    font-size: 12px; color: rgba(255,255,255,0.38); line-height: 1.5;
+}
+
+.dac-arrow {
+    position: absolute;
+    top: 22px; right: 20px;
+    font-size: 16px; color: rgba(255,255,255,0.20);
+    transition: all 0.22s ease;
+}
+
+.dac-hover-line {
+    height: 1px; width: 0; border-radius: 99px;
+    background: linear-gradient(90deg, var(--card-accent), transparent);
+    transition: width 0.5s ease;
+    margin-top: 4px;
+}
+
+/* ─── Bottom label ───────────────────────────────────────── */
+.dash-bottom-label {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 11px; color: rgba(255,255,255,0.15);
+    text-transform: uppercase; letter-spacing: 0.12em;
+    margin-top: 8px;
+}
+
+.dash-bottom-line { flex: 0 0 36px; height: 1px; background: rgba(255,255,255,0.08); }
+
+/* ─── Animate in ─────────────────────────────────────────── */
+.animate-in { animation: fadeUp 0.5s ease both; }
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
